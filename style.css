@@ -60,7 +60,7 @@
   }
   
   body {
-    background: linear-gradient(135deg, #F0F4F8, #DCE3F2, #B8C6DB);
+    background: linear-gradient(135deg, #9eceff, #85a0bb,  #DCE3F2, #86a1ce, #af7a7a);
     color: #333;
     line-height: 1.6;
     padding: 20px;
