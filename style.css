@@ -130,10 +130,19 @@
   .other:hover,
   .competence:hover,
   .formation:hover,
-  .realiste:hover,
+  .realiste:hover, 
   .contact:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px 15px #63a5f5;
+    background: linear-gradient(135deg, #9eceff, #85a0bb,  #DCE3F2);
+
+  }
+
+  header:hover{
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 20px 15px #6f86a1;
+    background: linear-gradient(135deg, #89cff0, #61a4e7,  #56cfbb);
+
   }
   
   .ent h3 {
