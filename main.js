@@ -1,25 +1,62 @@
-// window.addEventListener("load", function () {
-//     setTimeout(function () {
-//       document.getElementById("loader").style.display = "none";
-//       document.getElementById("content").style.display = "block";
-//     }, 5000); // 5000ms = 5 seconds
-//   });
-
-
-
-window.addEventListener("load", function () {
-    setTimeout(function () {
+    // LOADER
+    window.addEventListener("load", () => {
       document.getElementById("loader").style.display = "none";
-      document.getElementById("content").style.display = "block";
-    }, 5000);
-  });
+    });
 
-  function toggleMenu() {
-    document.getElementById('sidebar').classList.add('open');
-    document.getElementById('overlay').classList.add('show');
-  }
+    // DARK MODE
+    const toggle = document.querySelector(".dark-mode-toggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      toggle.innerHTML = document.body.classList.contains("dark-mode")
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+    });
 
-  function closeMenu() {
-    document.getElementById('sidebar').classList.remove('open');
-    document.getElementById('overlay').classList.remove('show');
-  }
+    // PROGRESS BAR
+    const progressBar = document.querySelector(".progress-bar");
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = `${progress}%`;
+    });
+
+    // ANIMATE SKILLS
+    const skills = document.querySelectorAll(".skill");
+    const showSkills = () => {
+      skills.forEach(skill => {
+        const rect = skill.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          skill.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", showSkills);
+    showSkills();
+
+    // Confirmation visuelle pour Formspree
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Message envoyé avec succès !');
+          form.reset();
+          // Redirection manuelle si _next ne marche pas
+          window.location.href = 'https://votresite.com/merci.html';
+        } else {
+          throw new Error('Erreur réseau');
+        }
+      })
+      .catch(error => {
+        alert("Erreur lors de l'envoi. Veuillez réessayer.");
+      });
+    });
