@@ -51,7 +51,7 @@
           alert('Message envoyé avec succès !');
           form.reset();
           // Redirection manuelle si _next ne marche pas
-          window.location.href = 'https://votresite.com/merci.html';
+          window.location.href = 'https://emmanuelselicour.onrender.com/';
         } else {
           throw new Error('Erreur réseau');
         }
