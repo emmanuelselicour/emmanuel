@@ -34,6 +34,43 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Ajoutez ceci à la section Language Selector existante */
+
+.language-selector {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1002;
+  display: flex;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  padding: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 5px;
+}
+
+.lang-btn {
+  padding: 8px 15px;
+  border: none;
+  background: transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  min-width: 40px;
+}
+
+.lang-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.lang-btn:hover:not(.active) {
+  background: rgba(34, 211, 238, 0.2);
+}
+
+/* Reste du CSS identique à la version précédente */
+
 .lang-btn {
   padding: 8px 15px;
   border: none;
@@ -666,4 +703,5 @@ body.dark-mode .alert-content {
   .contact-form {
     padding: 25px;
   }
+
 }
