@@ -32,20 +32,6 @@ body {
   border-radius: 25px;
   padding: 5px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Ajoutez ceci à la section Language Selector existante */
-
-.language-selector {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1002;
-  display: flex;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 25px;
-  padding: 5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   gap: 5px;
 }
 
@@ -67,23 +53,6 @@ body {
 
 .lang-btn:hover:not(.active) {
   background: rgba(34, 211, 238, 0.2);
-}
-
-/* Reste du CSS identique à la version précédente */
-
-.lang-btn {
-  padding: 8px 15px;
-  border: none;
-  background: transparent;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.lang-btn.active {
-  background: var(--primary);
-  color: white;
 }
 
 /* Dark Mode */
@@ -369,7 +338,7 @@ body.dark-mode .skill {
   color: var(--success);
 }
 
-/* Projects Section */
+/* Projects Section - Optimisé pour les captures d'écran */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -382,11 +351,28 @@ body.dark-mode .skill {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
 }
 
 body.dark-mode .project-card {
   background: rgba(31, 41, 55, 0.9);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
 }
 
 .project-card:hover {
@@ -395,8 +381,10 @@ body.dark-mode .project-card {
 }
 
 .project-image {
-  height: 200px;
+  height: 250px;
   overflow: hidden;
+  position: relative;
+  background: #f8f9fa;
 }
 
 .project-image img {
@@ -407,7 +395,42 @@ body.dark-mode .project-card {
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+.project-image::after {
+  content: '👁️ Voir le site';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(34, 211, 238, 0.95);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 2;
+}
+
+.project-card:hover .project-image::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.project-status {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--success);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: bold;
+  z-index: 2;
 }
 
 .project-card-content {
@@ -417,6 +440,17 @@ body.dark-mode .project-card {
 .project-card h3 {
   color: var(--primary);
   margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.project-card p {
+  color: var(--dark);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+body.dark-mode .project-card p {
+  color: var(--light);
 }
 
 .project-tech {
@@ -429,9 +463,10 @@ body.dark-mode .project-card {
 .project-tech span {
   background: var(--primary);
   color: white;
-  padding: 5px 10px;
+  padding: 5px 12px;
   border-radius: 15px;
   font-size: 0.8em;
+  font-weight: 500;
 }
 
 /* Download CV */
@@ -498,6 +533,7 @@ body.dark-mode .form-group label {
   border-radius: 10px;
   font-size: 1em;
   transition: all 0.3s ease;
+  font-family: inherit;
 }
 
 .form-group input:focus,
@@ -505,6 +541,11 @@ body.dark-mode .form-group label {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
 /* Buttons */
@@ -518,7 +559,10 @@ body.dark-mode .form-group label {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1em;
 }
 
 .btn:hover {
@@ -570,6 +614,7 @@ footer {
 
 .footer-content p {
   margin: 10px 0;
+  font-size: 1em;
 }
 
 /* Custom Alert */
@@ -608,6 +653,11 @@ body.dark-mode .alert-content {
   right: 15px;
   font-size: 1.5em;
   cursor: pointer;
+  color: var(--dark);
+}
+
+body.dark-mode .close-alert {
+  color: var(--light);
 }
 
 .alert-content i {
@@ -619,6 +669,12 @@ body.dark-mode .alert-content {
 .alert-content h3 {
   margin-bottom: 10px;
   color: var(--success);
+  font-size: 1.5em;
+}
+
+.alert-content p {
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 /* Responsive Design */
@@ -626,11 +682,20 @@ body.dark-mode .alert-content {
   .language-selector {
     top: 10px;
     left: 10px;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .lang-btn {
+    padding: 6px 12px;
+    font-size: 0.9em;
   }
   
   .dark-mode-toggle {
     top: 10px;
     right: 10px;
+    width: 35px;
+    height: 35px;
   }
   
   header {
@@ -669,6 +734,10 @@ body.dark-mode .alert-content {
     grid-template-columns: 1fr;
   }
   
+  .project-image {
+    height: 200px;
+  }
+  
   .skills {
     grid-template-columns: 1fr;
   }
@@ -679,6 +748,10 @@ body.dark-mode .alert-content {
   
   section h2 {
     font-size: 2em;
+  }
+  
+  .contact-form {
+    padding: 25px;
   }
 }
 
@@ -700,8 +773,17 @@ body.dark-mode .alert-content {
     padding: 20px;
   }
   
-  .contact-form {
-    padding: 25px;
+  .project-card-content {
+    padding: 20px;
   }
-
+  
+  .project-tech span {
+    padding: 4px 8px;
+    font-size: 0.7em;
+  }
+  
+  .cv-btn {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
 }
