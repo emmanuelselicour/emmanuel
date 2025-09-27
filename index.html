@@ -1,0 +1,238 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emmanuel Selicour | Travailleur Digital</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio Emmanuel Selicour - Travailleur Digital, Centre d'Appel, Marketing, Informatique | Création de solutions digitales et services linguistiques.">
+  <meta name="keywords" content="travailleur digital Haïti, centre d'appel, marketing, Emmanuel Selicour, portfolio">
+  <meta property="og:title" content="Portfolio Emmanuel Selicour | Travailleur Digital">
+  <meta property="og:image" content="https://files.catbox.moe/ndiqzk.jpg">
+  <meta name="author" content="Emmanuel Selicour">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo-ES.jpg" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Language Selector -->
+  <div class="language-selector">
+    <button id="lang-fr" class="lang-btn active">FR</button>
+    <button id="lang-en" class="lang-btn">EN</button>
+  </div>
+
+  <!-- Dark Mode Toggle -->
+  <button class="dark-mode-toggle" title="Changer mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Custom Alert Modal -->
+  <div id="customAlert" class="custom-alert">
+    <div class="alert-content">
+      <span class="close-alert">&times;</span>
+      <i class="fas fa-check-circle"></i>
+      <h3 id="alert-title">Message envoyé!</h3>
+      <p id="alert-message">Merci pour votre message. Je vous répondrai dès que possible.</p>
+      <button id="alert-ok" class="btn">OK</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <h1 data-translate="name">Emmanuel Selicour</h1>
+    <p data-translate="title">Travailleur Digital | Centre d'Appel | Marketing | Informatique | Langues</p>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-links">
+      <a href="#bio"><i class="fas fa-user"></i> <span data-translate="about">À propos</span></a>
+      <a href="#skills"><i class="fas fa-tools"></i> <span data-translate="skills">Compétences</span></a>
+      <a href="#projects"><i class="fas fa-code"></i> <span data-translate="projects">Projets</span></a>
+      <a href="#contact"><i class="fas fa-envelope"></i> <span data-translate="contact">Contact</span></a>
+    </div>
+  </nav>
+
+  <!-- ABOUT -->
+  <section id="bio">
+    <h2 data-translate="about_me">Qui suis-je ?</h2>
+    <div class="about-container">
+      <img src="true-manno.jpg" alt="Photo Emmanuel Selicour" />
+      <div>
+        <p data-translate="bio1">
+          Je m'appelle Emmanuel Selicour, surnommé "True Manno". Je suis un jeune professionnel passionné avec de l'expérience dans plusieurs domaines : développement web, centre d'appel, marketing digital, e-commerce et plus encore.
+          Je suis une personne sérieuse, flexible et toujours en apprentissage pour évoluer chaque jour.
+        </p>
+        <p data-translate="bio2">
+          Je crois au pouvoir de la connaissance et à la valeur du travail acharné. Mon objectif est de fournir des solutions efficaces et créatives dont tout le monde peut bénéficier.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 data-translate="my_skills">Mes Compétences</h2>
+    <div class="skills">
+      <div class="skill">
+        <h3><i class="fas fa-headset"></i> <span data-translate="call_center">Expérience en Centre d'Appel</span></h3>
+        <ul>
+          <li><i class="fas fa-check"></i> <span data-translate="skill1">Gestion d'appels clients en français et créole</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="skill2">Communication claire et efficace</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="skill3">Utilisation de logiciels CRM</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3><i class="fas fa-bullhorn"></i> <span data-translate="digital_marketing">Expérience en Marketing Digital</span></h3>
+        <ul>
+          <li><i class="fas fa-check"></i> <span data-translate="skill4">Création et gestion de campagnes sur les réseaux sociaux</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="skill5">SEO & marketing de contenu</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="skill6">Email marketing & analytics</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3><i class="fas fa-laptop-code"></i> <span data-translate="web_dev">Développement Web</span></h3>
+        <ul>
+          <li><i class="fas fa-check"></i> HTML, CSS, JavaScript</li>
+          <li><i class="fas fa-check"></i> PHP (Bases)</li>
+          <li><i class="fas fa-check"></i> <span data-translate="skill7">Design responsive & mobile</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="skill8">Création de sites vitrine & e-commerce</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3><i class="fas fa-comments"></i> <span data-translate="communication">Communication</span> <small>(<span data-translate="learning">en apprentissage</span>)</small></h3>
+        <ul>
+          <li><i class="fas fa-check"></i> <span data-translate="skill9">Communication interpersonnelle efficace</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="skill10">Rédaction professionnelle</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="skill11">Techniques de présentation</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="skill12">Communication d'équipe</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3><i class="fas fa-language"></i> <span data-translate="languages">Langues</span></h3>
+        <ul>
+          <li><i class="fas fa-check"></i> <span data-translate="lang1">Créole haïtien (langue maternelle)</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="lang2">Français (avancé)</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="lang3">Anglais (conversationnel)</span></li>
+          <li><i class="fas fa-check"></i> <span data-translate="lang4">Espagnol (notions)</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 data-translate="my_projects">Mes Projets</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="https://via.placeholder.com/600x400/3498db/ffffff?text=Site+Vitrine" alt="Projet Site Vitrine">
+        </div>
+        <div class="project-card-content">
+          <h3 data-translate="project1_title">Site Vitrine pour un Client</h3>
+          <p data-translate="project1_desc">Création d'un site vitrine pour une entreprise locale offrant des services de réparation.</p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+          <a href="#" class="btn" data-translate="view_project">Voir plus</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="https://via.placeholder.com/600x400/e74c3c/ffffff?text=E-commerce" alt="Projet E-commerce">
+        </div>
+        <div class="project-card-content">
+          <h3 data-translate="project2_title">Site E-commerce Démo</h3>
+          <p data-translate="project2_desc">Développement d'un site e-commerce pour vendre des produits digitaux (abonnements Netflix, jeux...)</p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>PHP</span>
+          </div>
+          <a href="#" class="btn" data-translate="view_project">Voir plus</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="https://via.placeholder.com/600x400/2ecc71/ffffff?text=Portfolio" alt="Projet Portfolio">
+        </div>
+        <div class="project-card-content">
+          <h3 data-translate="project3_title">Portfolio Personnel</h3>
+          <p data-translate="project3_desc">Conception et développement de mon portfolio professionnel avec design responsive.</p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+          <a href="#" class="btn" data-translate="view_project">Voir plus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD CV -->
+  <section id="download-cv">
+    <a href="https://drive.google.com/file/d/1w2AvECKNpr7FsQuFCtUTnDpzAepvKxzH/view?usp=drivesdk" download class="cv-btn">
+      <i class="fas fa-download"></i> <span data-translate="download_cv">Télécharger mon CV</span>
+    </a>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section id="contact">
+    <h2 data-translate="contact_me">Contactez-moi</h2>
+    <form class="contact-form" action="https://formspree.io/f/xjkonona" method="POST">
+      <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+      
+      <div class="form-group">
+        <label for="name" data-translate="form_name">Votre nom</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email" data-translate="form_email">Votre email</label>
+        <input type="email" id="email" name="_replyto" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message" data-translate="form_message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      
+      <input type="hidden" name="_next" value="https://emmanuelselicour.onrender.com/">
+      
+      <button type="submit" class="btn" data-translate="form_send">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/50943895284" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>📞 +509 4389 5284 | 📧 emmanuel.selicour@email.com</p>
+      <p><strong data-translate="footer_dev">SITE DÉVELOPPÉ PAR : TRUE MANNO</strong></p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
